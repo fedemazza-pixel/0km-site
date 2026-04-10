@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>QR Codes · Fede 0km</title>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Syne:wght@400;600;700;800&family=DM+Mono:wght@400&display=swap" rel="stylesheet">
+<style>
+:root{
+  --y:#FFE600;--bk:#080808;--card:#111111;--bd:#1e1e1e;--bd2:#2a2a2a;
+  --wh:#F5F5F0;--mu:rgba(245,245,240,.55);
+  --mono:'DM Mono',monospace;--sans:'Syne',sans-serif;--disp:'Bebas Neue',sans-serif;
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+body{
+  background:var(--bk);color:var(--wh);font-family:var(--sans);
+  min-height:100vh;display:flex;flex-direction:column;align-items:center;
+  justify-content:center;padding:3rem 2rem;
+}
+.page-title{
+  font-family:var(--mono);font-size:.65rem;color:var(--y);
+  text-transform:uppercase;letter-spacing:.25em;margin-bottom:2.5rem;
+  display:flex;align-items:center;gap:.6rem;
+}
+.page-title::before{content:'';width:18px;height:1px;background:var(--y);}
+
+.qr-grid{
+  display:grid;grid-template-columns:repeat(2,1fr);gap:2rem;
+  max-width:680px;width:100%;
+}
+@media(max-width:560px){.qr-grid{grid-template-columns:1fr;}}
+
+.qr-card{
+  background:var(--card);border:1px solid var(--bd2);
+  padding:2rem 1.75rem;display:flex;flex-direction:column;align-items:center;
+  gap:1.25rem;
+}
+.qr-label{
+  font-family:var(--mono);font-size:.6rem;color:var(--mu);
+  text-transform:uppercase;letter-spacing:.15em;text-align:center;
+}
+.qr-title{
+  font-family:var(--disp);font-size:1.55rem;color:var(--y);
+  line-height:1;text-align:center;letter-spacing:.02em;
+}
+.qr-box{
+  background:#fff;padding:14px;display:flex;
+  border:3px solid var(--y);
+}
+.qr-url{
+  font-family:var(--mono);font-size:.6rem;color:var(--mu);
+  text-align:center;word-break:break-all;line-height:1.6;
+}
+.qr-url span{color:var(--wh);}
+</style>
+</head>
+<body>
+
+<div class="page-title">Mercado Libre · Fede 0km</div>
+
+<div class="qr-grid">
+
+  <!-- QR 1: Sitio principal -->
+  <div class="qr-card">
+    <div class="qr-label">Sitio principal</div>
+    <div class="qr-title">Portfolio 0km</div>
+    <div class="qr-box">
+      <div id="qr1"></div>
+    </div>
+    <div class="qr-url"><span>fedemazza-pixel.github.io</span>/0km-site/</div>
+  </div>
+
+  <!-- QR 2: Stellantis -->
+  <div class="qr-card">
+    <div class="qr-label">Presentación Stellantis</div>
+    <div class="qr-title">Ecosistema 0km</div>
+    <div class="qr-box">
+      <div id="qr2"></div>
+    </div>
+    <div class="qr-url"><span>fedemazza-pixel.github.io</span>/0km-site/stellantis.html</div>
+  </div>
+
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/qrcodejs@1.0.0/qrcode.min.js"></script>
+<script>
+new QRCode(document.getElementById('qr1'), {
+  text: 'https://fedemazza-pixel.github.io/0km-site/',
+  width: 200, height: 200,
+  colorDark: '#000000', colorLight: '#ffffff',
+  correctLevel: QRCode.CorrectLevel.H
+});
+new QRCode(document.getElementById('qr2'), {
+  text: 'https://fedemazza-pixel.github.io/0km-site/stellantis.html',
+  width: 200, height: 200,
+  colorDark: '#000000', colorLight: '#ffffff',
+  correctLevel: QRCode.CorrectLevel.H
+});
+</script>
+</body>
+</html>

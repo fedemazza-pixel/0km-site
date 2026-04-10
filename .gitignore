@@ -1,0 +1,7 @@
+serve.ps1
+serve.cmd
+start_server.cmd
+embed_images.ps1
+fix_stellantis.ps1
+.claude/
+*.log
